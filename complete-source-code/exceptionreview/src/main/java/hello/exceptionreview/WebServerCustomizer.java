@@ -1,4 +1,4 @@
-package hello.exception;
+package hello.exceptionreview;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;

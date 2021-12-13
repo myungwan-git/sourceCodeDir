@@ -1,11 +1,9 @@
-package hello.exception;
+package hello.exceptionreview;
 
-import hello.exception.filter.LogFilter;
-import hello.exception.interceptor.LogInterceptor;
+import hello.exceptionreview.filter.LogFilter;
+import hello.exceptionreview.interceptor.LogInterceptor;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
