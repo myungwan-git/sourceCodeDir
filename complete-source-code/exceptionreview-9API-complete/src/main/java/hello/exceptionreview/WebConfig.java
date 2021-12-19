@@ -2,16 +2,26 @@ package hello.exceptionreview;
 
 import hello.exceptionreview.filter.LogFilter;
 import hello.exceptionreview.interceptor.LogInterceptor;
+import hello.exceptionreview.resolver.MyHandlerExceptionResolver;
+import hello.exceptionreview.resolver.UserHandlerExceptionResolver;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
+import java.util.List;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+  @Override
+  public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+    resolvers.add(new MyHandlerExceptionResolver());
+    resolvers.add(new UserHandlerExceptionResolver());
+  }
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
